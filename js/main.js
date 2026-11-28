@@ -44,7 +44,8 @@ const subtitleLocales = {
 	Chinese: 'zh-Hans',
 	TraditionalChinese: 'zh-Hant',
 	Japanese: 'ja',
-	Korean: 'ko'
+	Korean: 'ko',
+	Thai: 'th'
 };
 
 const CHARACTER = 'CH0229';
@@ -62,9 +63,9 @@ const AUDIO_DETAIL = [
                 "宴を楽しむ様子がそう見えているのだと言われております。"
             ],
             English: [
-                "Sensei, please look... It is the aurora.",
-                "In stories, it is said to be the sight of the Guardians of the Sky...",
-                "...enjoying a grand banquet."
+                "Sensei, look... An aurora.",
+                "Old stories say that the light is of...",
+                "...guardians of the heavens enjoying a banquet."
             ],
             Chinese: [
                 "老师，请看……那是极光。",
@@ -72,15 +73,16 @@ const AUDIO_DETAIL = [
                 "正在欢宴作乐。"
             ],
             TraditionalChinese: [
-                "老師，請看……那是極光。",
-                "傳說中，那景象宛如天空的守護者們——",
-                "正在歡宴作樂。"
+                "老師，請看……是極光呢。",
+                "在故事中，有著天空的守護者們──",
+                "享受宴會的模樣，看起來就像是這樣的說法。"
             ],
             Korean: [
-                "세세이, 제발 봐요.",
-                "이야기에서, 그것은 하늘의 경호자의 시야라고 한다...",
-                "...큰 파티를 즐기고 있습니다."
-            ]
+                "선생님, 보세요…… 오로라예요.",
+                "옛이야기에서는, 하늘의 수호자분들이.",
+                "연회를 즐기는 모습이, 그렇게 보이는 것이라고 했죠."
+            ],
+            Thai: ["ดูสิคะ คุณครู แสงเหนือค่ะ","ในเรื่องราวเก่าแก่บอกว่า นี่คือการเต้นรำอย่าง เพลิดเพลินในงานเลี้ยง","ของเหล่าผู้พิทักษ์ท้องฟ้า ที่องอาจและแกร่งกล้าค่ะ"]
         }
     },
     {
@@ -90,21 +92,22 @@ const AUDIO_DETAIL = [
                 "もう……二度と会えませんけれど。"
             ],
             English: [
-                "Though I can no longer meet the ones I thought I would be with forever...",
-                "...ever again."
+                "The ones who I thought would be with me forever...",
+                "...can no longer be found."
             ],
             Chinese: [
                 "曾以为能常伴左右的人们，",
                 "却已……再难相逢。"
             ],
             TraditionalChinese: [
-                "曾以為能常伴左右的人們，",
-                "卻已……再難相逢。"
+                "雖然曾經以為會永遠待在一起的人們，",
+                "已經……再也見不到了。"
             ],
             Korean: [
-                "내가 영원히 함께할 줄 알았던 사람들을 만나지 못했지만...",
-                "... 다시는"
-            ]
+                "늘 같이 있을 것이라고 생각했던 분들과는",
+                "이제, 만날 수 없게 되었고."
+            ],
+            Thai: ["คนที่คิดว่า จะอยู่ด้วยกันไปตลอด","ตอนนี้ กลับไม่ได้เจอกันแล้ว"]
         }
     },
     {
@@ -114,21 +117,22 @@ const AUDIO_DETAIL = [
                 "それでも私がオーロラを見上げ、希望を抱くのは――"
             ],
             English: [
-                "The world will likely remain as it always has—endlessly cold and distant.",
-                "Yet, the reason I look up at the aurora and embrace hope is—"
+                "And the world continues to feel cold and far.",
+                "But I can still look up at the aurora and have hope because..."
             ],
             Chinese: [
                 "世界一如既往，依旧冷漠无边，遥不可及。",
                 "即便如此，我仍仰望极光，心怀希望——"
             ],
             TraditionalChinese: [
-                "世界一如既往，依舊冷漠無邊，遙不可及。",
-                "即便如此，我仍仰望極光，心懷希望——"
+                "世界想必仍會一如既往充滿著寒冷、令人感覺遙遠吧。",
+                "而我之所以仍會仰望極光，懷抱希望──"
             ],
             Korean: [
-                "세상은 언제나 끝없이 추워서 멀리 있는 것처럼 남아 있을 것입니다.",
-                "그럼에도 불구하고, 내가 빛을 보고 희망을 받아들이는 이유는"
-            ]
+                "세상은 언제나처럼 끝없이 춥고, 멀 뿐이겠죠.",
+                "그럼에도 제가 오로라를 올려다보며 희망을 품는 것은……."
+            ],
+            Thai: ["ส่วนโลกก็เอาแต่หนาวเหน็บ อย่างที่เป็นมาตลอด","แต่ถึงยังไง การที่ฉัน มองดูแสงเหนือ และมีความหวังขึ้นมาได้..."]
         }
     },
     {
@@ -138,21 +142,22 @@ const AUDIO_DETAIL = [
                 "「パートナー」がいるからなのでしょうね。"
             ],
             English: [
-                "...is because I have a 'partner'...",
-                "...who will stay with me in this place until the very end."
+                "My \"partner,\" who will stay by my side until the end...",
+                "...is right here."
             ],
             Chinese: [
                 "在这个地方，有愿意与我并肩作战直至最后的“伙伴”",
                 "或许正是这个原因吧。"
             ],
             TraditionalChinese: [
-                "在這個地方，有願意與我並肩作戰直至最後的“夥伴”",
-                "或許正是這個原因吧。"
+                "或許是因為在這個地方，有個願意陪伴我到最後的",
+                "「夥伴」在身邊吧。"
             ],
             Korean: [
-                "...나는 파트너가 있기 때문에...",
-                "...이곳에서 끝까지 나와 함께 있을 거야."
-            ]
+                "이 자리에 저와 마지막까지 함께해 주실.",
+                "'동반자'께서 계시기 때문이겠지요."
+            ],
+            Thai: ["คงเป็นเพราะ ฉันมี 'ผู้ร่วมทาง'","ที่จะอยู่กับฉันตรงนี้ ไปจนสุดทางน่ะค่ะ"]
         }
     },
     {
@@ -162,21 +167,22 @@ const AUDIO_DETAIL = [
                 "お写真、よろしくお願いいたしますわね？"
             ],
             English: [
-                "Fufu. Yes, that is the current setting, Sensei.",
-                "You will take a picture for me, won't you?"
+                "Fufu. Yes. That's the prelude to this story.",
+                "Please take a good photo, okay?"
             ],
             Chinese: [
                 "呵呵。是的，现在就是这样的设定呢，“老师”。",
                 "拍照的事，就拜托您了，好吗？"
             ],
             TraditionalChinese: [
-                "呵呵。是的，現在就是這樣的設定呢，“老師”。",
-                "拍照的事，就拜託您了，好嗎？"
+                "呵呵。是的，現在是這種設定哦，「老師」。",
+                "照片，就麻煩您囉？"
             ],
             Korean: [
-                "그래, 그게 현재 상황입니다.",
-                "저한테 사진을 찍을 거야?"
-            ]
+                "후훗. 네. 지금은 그런 설정이랍니다. '선생님'.",
+                "사진, 잘 부탁드릴게요?"
+            ],
+            Thai: ["ฮุฮุ ค่ะ ตอนนี้พล็อต เป็นแบบนั้นค่ะ 'คุณครู'","รบกวน ถ่ายรูปให้สวยๆ นะคะ"]
         }
     }
 ];
@@ -288,7 +294,7 @@ function playVoiceline() {
 			track.play().catch(finish);
 
 			if (dialogBox) {
-				textbox.textContent = dialog[window.selectedLanguage][index];
+				textbox.textContent = getSubtitleText(dialog, window.selectedLanguage, index);
 				textbox.style.opacity = 1;
 			}
 		},
@@ -458,6 +464,16 @@ function setMouse(event) {
 	return { x: ax - canvas.width * positionX, y: ay - canvas.height * positionY };
 }
 
+function getSubtitleText(dialog, language, index) {
+	let text = dialog?.[language]?.[index];
+	if (text == null && language === 'Thai') {
+		language = 'English';
+		text = dialog?.[language]?.[index];
+	}
+	textbox.lang = subtitleLocales[language];
+	return text ?? "";
+}
+
 function updateSubtitleLanguage() {
 	let language = subtitleLanguagePreference;
 	if (language === 'auto') {
@@ -471,6 +487,8 @@ function updateSubtitleLanguage() {
 			language = 'Japanese';
 		} else if (primary === 'ko' || primary === 'korean' || primary === 'koreana') {
 			language = 'Korean';
+		} else if (primary === 'th' || primary === 'thai') {
+			language = 'Thai';
 		} else {
 			language = 'English';
 		}
@@ -480,7 +498,7 @@ function updateSubtitleLanguage() {
 	window.selectedLanguage = language;
 	textbox.lang = subtitleLocales[language];
 	const clip = currentTracks.at(-1);
-	if (dialogBox && clip) textbox.textContent = clip.dialog[language][clip.index];
+	if (dialogBox && clip) textbox.textContent = getSubtitleText(clip.dialog, language, clip.index);
 }
 
 function init() {
